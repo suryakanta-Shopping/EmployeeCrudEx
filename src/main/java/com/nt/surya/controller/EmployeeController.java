@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.nt.surya.service.impl.EmployeeServiceImpl;
 
 @Controller
-@RequestMapping("/employee")
+@RequestMapping("/emp")
 public class EmployeeController {
 
 	//HAS-A
