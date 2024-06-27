@@ -1,5 +1,7 @@
 package com.nt.surya.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,14 +34,26 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/save")
-	public String saveEmployee
-	(@ModelAttribute Employee employee, 
-			Model model)
-	{
+	public String saveEmployee(@ModelAttribute Employee employee, Model model) {
 
 		Integer id = employeeServiceImpl.saveEmployee(employee);
 		String message = "Employee   '" + id + "'  Created";
 		model.addAttribute("message", message);
 		return "RegisterPage";
 	}
+
+	/**
+	 * Fetch data from DB using service send data to UI using Model Return to
+	 * EmployeeData.html
+	 * 
+	 * @return
+	 */
+
+	@GetMapping("/all")
+	public String viewAllEmployees(Model model) {
+		List<Employee> emplist = employeeServiceImpl.getAllEmployees();
+		model.addAttribute("emplist", emplist);
+		return "EmployeeData";
+	}
+
 }

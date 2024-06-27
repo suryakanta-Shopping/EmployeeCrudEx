@@ -1,5 +1,7 @@
 package com.nt.surya.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,5 +21,11 @@ public class EmployeeServiceImpl implements IEmployeeService{
 	public Integer saveEmployee(Employee employee) {
 		employee=employeeRepository.save(employee);
 		return employee.getId();
+	}
+
+	@Override
+	public List<Employee> getAllEmployees() {
+		List<Employee> findAll = employeeRepository.findAll();
+		return findAll;
 	}
 }
