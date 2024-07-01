@@ -27,10 +27,23 @@
 				  <td th:text="${ob.empDept}"></td>
 				  <td th:text="${ob.empAddr}"></td>
 				  <td>
-					  <a href="#" class="btn btn-danger">DELETE</a> | <a href="#" class="btn btn-warning">EDIT</a>
+					  <a th:href="@{/emp/delete(id=${ob.id})}" class="btn btn-danger">DELETE</a> | 
+					   <a th:href="@{/emp/edit(id=${ob.id})}" class="btn btn-warning">EDIT</a>  
 				  </td>
 			  </tr>
 		  </table>
+		  <div th:text="${message}" class="bg-info text-white"></div>
 	  </di>
   </body>
 </html>	  
+
+
+
+
+
+
+
+
+
+
+
