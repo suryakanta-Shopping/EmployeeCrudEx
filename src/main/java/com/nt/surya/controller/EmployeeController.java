@@ -129,7 +129,6 @@ public class EmployeeController {
 		
 		employeeServiceImpl.updateEmployee(employee);
 		//req.getReqDis("/all")- in adv java
-		//it will be redirect
 		return "redirect:all";  //it will redirect 'all' method page
 	}
 	
