@@ -13,4 +13,6 @@ public interface IEmployeeService {
 	void deleteEmployee(Integer id);
 
 	Employee getOneEmployee(Integer id);
+	
+	void updateEmployee(Employee e);
 }

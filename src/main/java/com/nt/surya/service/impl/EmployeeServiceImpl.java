@@ -35,6 +35,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		employeeRepository.deleteById(id);
 	}
 
+	
+	//Edit
 	@Override
 	public Employee getOneEmployee(Integer id) {
 		Optional<Employee> findById = employeeRepository.findById(id);
@@ -45,5 +47,12 @@ public class EmployeeServiceImpl implements IEmployeeService {
 		} // TODO : else throw Exception implement later
 
 		return null;
+	}
+
+	//update
+	@Override
+	public void updateEmployee(Employee e) {
+		employeeRepository.save(e);
+		
 	}
 }

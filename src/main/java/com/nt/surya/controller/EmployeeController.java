@@ -112,9 +112,26 @@ public class EmployeeController {
 	/**
 	 *  
 	 *  do update
-	 * 
+	 * Read Form data from edit page
+	 * call Service
+	 * redirect back to all
 	 */
 	
+	@PostMapping("/update")
+	public String updateEmployee(
+			
+			@ModelAttribute Employee employee,
+			 Model model 
+			) 
+	
+	
+	{
+		
+		employeeServiceImpl.updateEmployee(employee);
+		//req.getReqDis("/all")- in adv java
+		//it will be redirect
+		return "redirect:all";  //it will redirect 'all' method page
+	}
 	
 }
 
